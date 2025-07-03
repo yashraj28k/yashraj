@@ -129,7 +129,7 @@
             <p class="nav-second">& Orders</p>
             </div>
         
-        <div class="nav-cart border">
+        <div class="nav-cart border" id="Cards">
             <i class="fa-solid fa-cart-shopping"></i>  
             Cart
         </div>
@@ -155,11 +155,47 @@
     </header>
 
     <div class="hero-section">
-
+        <div class="carousel">
+            <button class="carousel-btn left" onclick="prevSlide()">&#10094;</button>
+            <div class="carousel-images">
+            <img src="hero_image.jpg" alt="Slide 1" class="active">
+            <img src="hero_image1.png" alt="Slide 2">
+            <img src="hero2img.jpg" alt="Slide 3">
+            <img src="hero3img.jpg" alt="Slide 4">
+            <img src="hero4img.jpg" alt="Slide 5">
+            <img src="hero_image2.jpeg" alt="Slide 6">
+            </div>
+            <button class="carousel-btn right" onclick="nextSlide()">&#10095;</button>
+        </div>
         <div class="hero-msg">
         <p>You are now on amazon.com. you can also shop on Amazon India for millions of products with fast local delivery.<a>click here to go</a></p>
         </div>
         </div>
+        <script>
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.carousel-images img');
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) slide.classList.add('active');
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            // Show the first slide by default
+            showSlide(currentSlide);
+            </script>
+
 
         <div class="shop-section">
             <div class="box1 box">
@@ -223,6 +259,7 @@
         </div>
 
 </div>
+
 <footer>
     <div class="foot-panel1" id="BackToTop">
         Back to Top
@@ -231,37 +268,41 @@
     <div class="foot-panel2">
         <ul>
             <p>Get to Know Us</p>
-            <a>About Amazon</a>
-            <a>Careers</a>
-            <a>Press Releases</a>
-            <a>Amazon Science</a>
+            <a href="#">About Amazon</a>
+            <a href="#">Careers</a>
+            <a href="#">Press Releases</a>
+            <a href="#">Amazon Science</a>
         </ul>
+
         <ul>
             <p>Connect with Us</p>
-            <a>Facebook</a>
-            <a>Twitter</a>
-            <a>Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
         </ul>
+
         <ul>
             <p>Make Money with Us</p>
-            <a>Sell on Amazon</a>
-            <a>Amazon Global Selling</a>
-            <a>Supply to Amazon</a>
-            <a>Become an Affiliate</a>
-            <a>Fulfilment by Amazon</a>
-            <a>Advertise Your Products</a>
-            <a>Amazon Pay on Merchants</a>
-            <a>Build Your Brand</a>
+            <a href="#">Sell on Amazon</a>
+            <a href="#">Amazon Global Selling</a>
+            <a href="#">Supply to Amazon</a>
+            <a href="#">Become an Affiliate</a>
+            <a href="#">Fulfilment by Amazon</a>
+            <a href="#">Advertise Your Products</a>
+            <a href="#">Amazon Pay on Merchants</a>
+            <a href="#">Build Your Brand</a>
         </ul>
+
         <ul>
             <p>Let Us Help You</p>
-            <a>Your Account</a>
-            <a>Returns Centre</a>
-            <a>Recalls & Product Safety</a>
-            <a>100% Purchase Protection</a>
-            <a>Amazon App Download</a>
-            <a>Help</a>
+            <a href="#">Your Account</a>
+            <a href="#">Returns Centre</a>
+            <a href="#">Recalls & Product Safety</a>
+            <a href="#">100% Purchase Protection</a>
+            <a href="#">Amazon App Download</a>
+            <a href="#">Help</a>
         </ul>
+
     </div>
 
     <div class="foot-panel3">
